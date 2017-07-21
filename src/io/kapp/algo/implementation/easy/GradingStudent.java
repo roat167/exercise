@@ -1,4 +1,4 @@
-package io.kapp.algo.implementation;
+package io.kapp.algo.implementation.easy;
 
 public class GradingStudent {
 	
