@@ -10,17 +10,6 @@ package io.kapp.algo.implementation.easy;
  * Otherwise, the NOT null node will be used as the node of new tree.
  */
 
-// Definition for a binary tree node.
-class TreeNode {
-	int val;
-	TreeNode left;
-	TreeNode right;
-
-	TreeNode(int x) {
-		val = x;
-	}	
-}
-
 public class MergeTwoBinaryTree {	
 	public static TreeNode mergeTrees(TreeNode t1, TreeNode t2) {
 		if (t1 == null) return t2;
