@@ -12,14 +12,14 @@ public class LevelOrderTraversal {
 	//Using Queue
 	//Ref: https://www.hackerrank.com/challenges/30-binary-trees/problem
 	
-	static void levelOrder (Node root) {
-		Queue<Node> q = new LinkedList<Node>();
+	static void levelOrder (TreeNode root) {
+		Queue<TreeNode> q = new LinkedList<TreeNode>();
 		if (root != null) {
 			q.add(root);
 		}
 		
 		while (!q.isEmpty()) {
-			Node cur = q.remove();
+			TreeNode cur = q.remove();
 			//Here we add left node first
 			if (cur.left != null) {
 				q.add(cur.left);
@@ -29,17 +29,17 @@ public class LevelOrderTraversal {
 				q.add(cur.right);
 			}
 			
-			System.out.printf("%d ", cur.data);
+			System.out.printf("%d ", cur.val);
 		}		
 	}
 	
-	public static Node insert(Node root, int data) {
+	public static TreeNode insert(TreeNode root, int data) {
 		if (root == null) {
-			return new Node(data);
+			return new TreeNode(data);
 		}
 		else {
-			Node cur;
-			if (data <= root.data) {
+			TreeNode cur;
+			if (data <= root.val) {
 				cur = insert(root.left, data);
 				root.left = cur;
 			}
@@ -55,7 +55,7 @@ public class LevelOrderTraversal {
 	public static void main(String[] args) {
 		//sample input 3 2 5 1 4 7 
 		int[] nums = {3, 2, 5, 1, 4, 7};
-		Node root = null;
+		TreeNode root = null;
 		
 		for (int i = 0; i < nums.length; i++) {
 			root = insert(root, nums[i]);
@@ -66,11 +66,3 @@ public class LevelOrderTraversal {
 	}
 }
 
-class Node {
-	Node left, right;
-	int data;
-	Node(int data) {
-		this.data = data;
-		left = right = null;
-	}
-}
