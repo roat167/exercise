@@ -28,19 +28,17 @@ public class AssignCookies {
 
 	public int findContentChildren(int[] g, int[] s) {
 		// assuming that the arrays already sort
-		Arrays.sort(g);
-		Arrays.sort(s);
+		Arrays.sort(g); // g is children
+		Arrays.sort(s); // s is cookie
 
-		int len = g.length - 1;
 		int max = 0;
 
-		
-		for (int i = 0; i < s.length; i++) {		
-			if (i > len)
+		for (int i = 0; i < s.length; i++) {
+			if (max >= g.length)
 				break;
 
-			if (s[i] <= g[i]) {
-				max ++;
+			if (g[max] <= s[i]) {
+				max++;
 			}
 		}
 
@@ -52,7 +50,7 @@ public class AssignCookies {
 		// arrange
 		int[] s = { 1, 2, 3 }, g = { 1, 1 }; // expect 1
 		int[] s2 = { 1, 2 }, g2 = { 1, 2, 3 }; // expect 2
-		 
+
 		// act
 		int acutal = new AssignCookies().findContentChildren(g, s);
 		int acutal2 = new AssignCookies().findContentChildren(g2, s2);
