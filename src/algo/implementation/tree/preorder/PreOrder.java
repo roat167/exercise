@@ -1,6 +1,8 @@
 package algo.implementation.easy;
 
 /**
+ * PreOrder : Root -> Left -> Right
+ *
  *  preorder traversal of its nodes' values using
  *  Iterative and Recursive
  *  both take about 1ms
