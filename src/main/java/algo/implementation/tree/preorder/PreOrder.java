@@ -1,7 +1,13 @@
-package algo.implementation.easy;
+package algo.implementation.tree.preorder;
+
+import algo.implementation.tree.TreeNode;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
 
 /**
- * PreOrder : Root -> Left -> Right
+ * InOrder : Root -> Left -> Right
  *
  *  preorder traversal of its nodes' values using
  *  Iterative and Recursive
